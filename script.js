@@ -42,8 +42,7 @@ var luhnChecksumValidation = function() {
 
 };
 
-var handleDoubleDigits = function() {
-  var digit = prompt('Enter a single digit number, 0-9:');
+var handleDoubleDigits = function(digit) {
   var doubleDigit = digit * 2;
   var sum;
   if (doubleDigit >= 10) {
@@ -51,7 +50,6 @@ var handleDoubleDigits = function() {
   } else {
     sum = doubleDigit;
   }
-  alert('Sum of digits in doubled number: ' + sum);
 };
 
 halfOfASquare();
