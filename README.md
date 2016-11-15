@@ -18,3 +18,6 @@ Write a program that takes an identification number of arbitrary length,double t
 
 ### Doube Digits Over 10
 Treat numbers that create double digits when doubled.
+
+### Change Numbers from Characters to Integers
+Change string to number.
