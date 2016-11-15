@@ -21,7 +21,18 @@ var sidewaysTriangle = function() {
   var pagePlace = document.getElementById('sideways_triangle');
   var div = document.createElement('div');
   var p;
-  
+  for (var row = 1; row <= 7; row++) {
+    var element = '';
+    for (var line = 1; line <= 4 - Math.abs(4 - row); line++) {
+      element += message;
+    }
+    console.log('element ', element);
+    p = document.createElement('p');
+    p.textContent = element;
+    div.appendChild(p);
+  }
+  pagePlace.appendChild(div);
 };
 
 halfOfASquare();
+sidewaysTriangle();
