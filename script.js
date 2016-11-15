@@ -52,6 +52,10 @@ var handleDoubleDigits = function(digit) {
   }
 };
 
+var readIndividualDigits = function() {
+  var digit = parseInt(prompt('Enter a one-digit number: '));
+};
+
 halfOfASquare();
 sidewaysTriangle();
 //luhnChecksumValidation();
