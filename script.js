@@ -34,5 +34,13 @@ var sidewaysTriangle = function() {
   pagePlace.appendChild(div);
 };
 
+var luhnChecksumValidation = function() {
+  var message = '#';
+  var pagePlace = document.getElementById('sideways_triangle');
+  var div = document.createElement('div');
+  var p;
+  
+};
+
 halfOfASquare();
 sidewaysTriangle();

@@ -12,3 +12,6 @@ Create a line of 5 #.
 
 ## A Sideways Triangle
 Create a triangle that starts with one #, grows to four # and then goes back to one #.
+
+## Luhn Checksum Validation
+Write a program that takes an identification number of arbitrary length,double the value of every other digit starting from the right, and divide by 10.
