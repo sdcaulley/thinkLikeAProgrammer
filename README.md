@@ -9,3 +9,6 @@ Create a 5x5 square of #.
 
 ### A Line (Reduction of A Square)
 Create a line of 5 #.
+
+## A Sideways Triangle
+Create a triangle that starts at one #, goes to four #, and then back to one #.
