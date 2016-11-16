@@ -60,7 +60,7 @@ var readIndividualDigits = function() {
       if (i % 2 === 0) {
         checksum += parseInt(digit[i]);
       } else {
-        var double = handleDouble Digits(parseInt(digit[i]));
+        var double = handleDoubleDigits(parseInt(digit[i]));
         checksum += double;
       }
     } else {
@@ -78,6 +78,26 @@ var readIndividualDigits = function() {
     console.log('Checksum is not divisible by 10. Invalid');
   }
   console.log('total: ', checksum);
+};
+
+//positive or negative code
+var positiveOrNegative = function() {
+  var positiveCount = 0;
+  var negativeCount = 0;
+  for (var i = 0; i < 10; i++) {
+    var number = prompt('Please enter a positive or negative number: ');
+    if (parseInt(number) > 0) {
+      positiveCount++;
+    } else {
+      negativeCount++;
+    }
+  }
+  var response = prompt('Do you want the (p)ositive or (n)egative count?');
+  if (response.toLowerCase() === 'p') {
+    alert('The number of positive numbers is: ' + positiveCount);
+  } else {
+    alert('The number of negative number is: ' + negativeCount);
+  }
 };
 
 halfOfASquare();
