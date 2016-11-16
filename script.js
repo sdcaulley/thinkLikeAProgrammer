@@ -60,7 +60,7 @@ var readIndividualDigits = function() {
       if (i % 2 === 0) {
         checksum += parseInt(digit[i]);
       } else {
-        var double = handleDoubleDigits(parseInt(digit[i]));
+        var double = handleDouble Digits(parseInt(digit[i]));
         checksum += double;
       }
     } else {
