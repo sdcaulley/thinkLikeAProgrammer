@@ -33,10 +33,7 @@ var sidewaysTriangle = function() {
 };
 //Luhn Checksum code
 var luhnChecksumValidation = function() {
-  var message = '#';
-  var pagePlace = document.getElementById('checksum_validation');
-  var div = document.createElement('div');
-  var p;
+  document.getElementById('checksum_validation').addEventListener('click', readIndividualDigits);
 
 };
 
@@ -52,7 +49,7 @@ var handleDoubleDigits = function(digit) {
 };
 
 var readIndividualDigits = function() {
-  var digit = prompt('Enter a six-digit number: ');
+  var digit = prompt('Enter your number for validation: ');
   var checksum = 0;
   for (var i = 0; i < digit.length; i++) {
     //handle odd or even length numbers
@@ -73,11 +70,10 @@ var readIndividualDigits = function() {
     }
   };
   if (checksum % 10 === 0) {
-    console.log('Checksum is divisible by 10. Valid.');
+    alert('Checksum is divisible by 10. Valid.');
   } else {
-    console.log('Checksum is not divisible by 10. Invalid');
+    alert('Checksum is not divisible by 10. Invalid');
   }
-  console.log('total: ', checksum);
 };
 
 //positive or negative code
@@ -102,5 +98,4 @@ var positiveOrNegative = function() {
 
 halfOfASquare();
 sidewaysTriangle();
-//luhnChecksumValidation();
-handleDoubleDigits();
+luhnChecksumValidation();
