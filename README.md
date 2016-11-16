@@ -21,3 +21,6 @@ Treat numbers that create double digits when doubled.
 
 ### Change Numbers from Characters to Integers
 Change string to number.
+
+### Which Numbers to Double
+Figure out which numbers to double.
