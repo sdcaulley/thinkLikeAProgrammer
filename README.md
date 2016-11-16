@@ -24,3 +24,6 @@ Change string to number.
 
 ### Which Numbers to Double
 Figure out which numbers to double.
+
+### Positive or Negative
+Write a program that reads 10 integers from the user.  After all the numbers have been entered, the user may ask to display the count of positive or the count of negative numbers.
