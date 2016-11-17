@@ -96,6 +96,10 @@ var positiveOrNegative = function() {
   }
 };
 
+var decodeAMessage = function() {
+  
+};
+
 halfOfASquare();
 sidewaysTriangle();
 luhnChecksumValidation();
