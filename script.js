@@ -97,7 +97,51 @@ var positiveOrNegative = function() {
 };
 
 var decodeAMessage = function() {
-  
+
+};
+
+var numberToUpperCase = function(number) {
+  var outputUpperCase = String.fromCharCode(parseInt(number) + 64);
+  return outputUpperCase;
+};
+
+var numberToLowerCase = function(number) {
+  var outputLowerCase = String.fromCharCode(parseInt(number) + 96);
+  return outputLowerCase;
+};
+
+var numberToPunctuation = function(number) {
+  var outputPunctuation = '';
+  switch (number) {
+    case 1:
+      outputPunctuation = '&#33;';
+      break;
+    case 2:
+      outputPunctuation = '&#43;';
+      break;
+    case 3:
+      outputPunctuation = '&#44;';
+      break;
+    case 4:
+      outputPunctuation = '&#46;';
+      break;
+    case 5:
+      outputPunctuation = '&#32;';
+      break;
+    case 6:
+      outputPunctuation = '&#59;';
+      break;
+    case 7:
+      outputPunctuation = '&#34;';
+      break;
+    case 8:
+      outputPunctuation = '&#39;';
+      break;
+    default:
+      alert('No such number.');
+      break;
+  }
+  return outputPunctuation;
 };
 
 halfOfASquare();
