@@ -1,39 +1,39 @@
 var halfOfASquare = function() {
   var message = '#';
-  var pagePlace = document.getElementById('half_square');
-  var div = document.createElement('div');
+  //var pagePlace = document.getElementById('half_square');
+  //var div = document.createElement('div');
   var p;
   for (var row = 1; row <= 5; row++) {
     var element = '';
     for (var line = 1; line <= 6 - row; line++) {
       element += message;
     }
-    p = document.createElement('p');
-    p.textContent = element;
-    div.appendChild(p);
+    //p = document.createElement('p');
+    //p.textContent = element;
+    //div.appendChild(p);
   }
-  pagePlace.appendChild(div);
+  //pagePlace.appendChild(div);
 };
 
 var sidewaysTriangle = function() {
   var message = '#';
-  var pagePlace = document.getElementById('sideways_triangle');
-  var div = document.createElement('div');
+  //var pagePlace = document.getElementById('sideways_triangle');
+  //var div = document.createElement('div');
   var p;
   for (var row = 1; row <= 7; row++) {
     var element = '';
     for (var line = 1; line <= 4 - Math.abs(4 - row); line++) {
       element += message;
     }
-    p = document.createElement('p');
-    p.textContent = element;
-    div.appendChild(p);
+    //p = document.createElement('p');
+    //p.textContent = element;
+    //div.appendChild(p);
   }
-  pagePlace.appendChild(div);
+  //pagePlace.appendChild(div);
 };
 //Luhn Checksum code
 var luhnChecksumValidation = function() {
-  document.getElementById('checksum_validation').addEventListener('click', readIndividualDigits);
+  //document.getElementById('checksum_validation').addEventListener('click', readIndividualDigits);
 
 };
 
@@ -97,53 +97,115 @@ var positiveOrNegative = function() {
 };
 
 var decodeAMessage = function() {
-
+  var message = prompt('Type in your message.  Use commas to separate characters.');
+  var number = '';
+  var decodeMessage = '';
+  for (var i = 0; i < message.length; i++) {
+    if (message[i] !== ',') {
+      number += message[i];
+    } else {
+      decodeMessage += modeSwitch(parseInt(number));
+      console.log('decodeMessage: ', decodeMessage);
+      number = '';
+    }
+  };
+  alert('Here is your message: ' + decodeMessage);
 };
 
 var numberToUpperCase = function(number) {
-  var outputUpperCase = String.fromCharCode(parseInt(number) + 64);
+  var outputUpperCase = String.fromCharCode(number + 64);
   return outputUpperCase;
 };
 
 var numberToLowerCase = function(number) {
-  var outputLowerCase = String.fromCharCode(parseInt(number) + 96);
+  var outputLowerCase = String.fromCharCode(number + 96);
   return outputLowerCase;
 };
 
 var numberToPunctuation = function(number) {
   var outputPunctuation = '';
   switch (number) {
-    case 1:
-      outputPunctuation = '&#33;';
-      break;
-    case 2:
-      outputPunctuation = '&#43;';
-      break;
-    case 3:
-      outputPunctuation = '&#44;';
-      break;
-    case 4:
-      outputPunctuation = '&#46;';
-      break;
-    case 5:
-      outputPunctuation = '&#32;';
-      break;
-    case 6:
-      outputPunctuation = '&#59;';
-      break;
-    case 7:
-      outputPunctuation = '&#34;';
-      break;
-    case 8:
-      outputPunctuation = '&#39;';
-      break;
-    default:
-      alert('No such number.');
-      break;
+  case 1:
+    outputPunctuation = '&#33;';
+    break;
+  case 2:
+    outputPunctuation = '&#43;';
+    break;
+  case 3:
+    outputPunctuation = '&#44;';
+    break;
+  case 4:
+    outputPunctuation = '&#46;';
+    break;
+  case 5:
+    outputPunctuation = '&#32;';
+    break;
+  case 6:
+    outputPunctuation = '&#59;';
+    break;
+  case 7:
+    outputPunctuation = '&#34;';
+    break;
+  case 8:
+    outputPunctuation = '&#39;';
+    break;
+  default:
+    alert('No such number.');
+    break;
   }
   return outputPunctuation;
+};
+
+var modeSwitch = function(number) {
+  var mode = 'upperCase';
+  var char;
+  switch (mode) {
+  case 'upperCase':
+    console.log('upperCase: ', number);
+    number = number % 27;
+    if (number === 0) {
+      mode = 'lowerCase';
+      console.log('mode: ', mode);
+      break;
+    } else {
+      char = numberToUpperCase(number);
+      return char;
+      char = '';
+      break;
+    }
+  case 'lowerCase':
+    console.log('lowerCase: ', number);
+    number = number % 27;
+    alert('Modulo 27: ' + number);
+    if (number === 0) {
+      mode = 'punctuation';
+      break;
+    } else {
+      char = numberToLowerCase(number);
+      return char;
+      char = '';
+      break;
+    }
+  case 'punctuation':
+    console.log('punctuation: ', number);
+    number = number % 9;
+    alert('Modulo 9: ' + number);
+    if (number === 0) {
+      mode = 'upperCase';
+      break;
+    } else {
+      char = numberToPunctuation(number);
+      return char;
+      char = '';
+      break;
+    }
+  }
 };
 
 halfOfASquare();
 sidewaysTriangle();
 luhnChecksumValidation();
+decodeAMessage();
+
+// #!/user/bin/env node  = ./file
+// console.log(function(process.argv[2]))
