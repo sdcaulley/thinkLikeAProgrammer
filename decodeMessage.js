@@ -5,8 +5,6 @@ var decodeAMessage = function() {
   var number = message.split(',');
   var decodeMessage = '';
 
-  console.log('number: ', number);
-
   for (var i = 0; i < number.length; i++) {
     var intGroup = parseInt(number[i]);
     decodeMessage += modeSwitch(intGroup);
